@@ -56,4 +56,4 @@ A key advantage of the Square Cupola AprilTag is its robustness against light re
 
 ## Publication
 
-This work has been accepted by the **International Conference on Aerospace System Science and Engineering 2025** and will be presented orally.
+This work has been accepted by the **International Conference on Aerospace System Science and Engineering 2025** and was presented orally.
