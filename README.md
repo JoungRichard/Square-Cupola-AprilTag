@@ -16,10 +16,10 @@ Compared to the standard AprilTag, our Square Cupola AprilTag, combined with the
 
 As shown in the figures below, the position error in the z-axis is reduced significantly (by up to four times at a distance of 3.4 m), and the orientation estimation is much more stable with minimal fluctuation.
 
-![Z-axis Position Error Comparison](Media/z error.png)
+![Z-axis Position Error Comparison](Media/z_error.png)
 *Position error (z-axis) and standard deviation for different z distances.*
 
-![RX-axis Orientation Error Comparison](Media/rx error.png)
+![RX-axis Orientation Error Comparison](Media/rx_error.png)
 *Orientation accuracy (rx error) of the standard AprilTag and the square cupola AprilTag.*
 
 ### UAV Target Tracking Performance
