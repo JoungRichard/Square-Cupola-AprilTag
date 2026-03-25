@@ -12,48 +12,51 @@ This research addresses the limitations of standard fiducial markers in precise 
 
 ### Improved Pose Estimation Accuracy
 
-Compared to the standard AprilTag, our Square Cupola AprilTag, combined with the proposed data fusion algorithm, demonstrates a significant reduction in pose estimation error and variance, especially at larger distances.
+Compared to the standard AprilTag, our Square Cupola AprilTag, combined with the proposed data fusion algorithm, demonstrates a significant reduction in pose estimation error and variance, especially at larger distances. 
 
-As shown in the figures below, the position error in the z-axis is reduced by up to four times at a distance of 3.4 meters. The orientation estimation (rx angle) is also more stable, with consistently smaller errors and standard deviations across the tested range.
+As shown in the figures below, the position error in the z-axis is reduced significantly (by up to four times at a distance of 3.4 m), and the orientation estimation is much more stable with minimal fluctuation.
 
-| Standard AprilTag vs. Square Cupola AprilTag |
-| :---: |
-| ![Z-axis Position Error Comparison](Media/z_error.png) |
-| *Position error (z-axis) comparison* |
-| ![RX-axis Orientation Error Comparison](Media/rx_error.png) |
-| *Orientation error (rx-axis) comparison* |
+![Z-axis Position Error Comparison](Media/z_error.png)
+*Position error (z-axis) and standard deviation for different z distances.*
+
+![RX-axis Orientation Error Comparison](Media/rx_error.png)
+*Orientation accuracy (rx error) of the standard AprilTag and the square cupola AprilTag.*
 
 ### UAV Target Tracking Performance
 
-We validated the effectiveness of our method in simulated UAV target tracking scenarios. The UAV successfully tracks a ground vehicle moving in both uniform linear and circular motions, relying solely on visual feedback from the Square Cupola AprilTag.
+We validated the effectiveness of our method in simulated UAV target tracking scenarios. The UAV successfully tracks a ground vehicle moving in both uniform linear and circular motions, relying solely on visual feedback from the Square Cupola AprilTag without external systems like GPS.
 
 **1. Uniform Linear Motion Tracking**
 
-The UAV tracks a ground vehicle moving at a constant velocity of 0.7 m/s. The system achieves stable tracking with a position error of approximately 0.07 m.
+The UAV tracks a ground vehicle moving at a constant velocity of 0.7 m/s. The UAV successfully accelerates, matches the target velocity, and achieves stable tracking with a position error in x stabilizing at approximately 0.07 m.
 
-| Linear Motion Tracking Results |
-| :---: |
-| [![Linear Tracking Demo](Media/linear.png)](Media/linear_tracking.mp4) |
-| *Click the image above to play the tracking video (Media/linear_tracking.mp4)* |
+![Linear Tracking Demo](Media/linear_tracking.gif)
+*Simulation of UAV tracking a vehicle in uniform linear motion.*
+
+![Linear Tracking Results](Media/linear.png)
+*Tracking error of uniform linear motion.*
 
 **2. Uniform Circular Motion Tracking**
 
-The UAV tracks a ground vehicle moving along a circular trajectory with a radius of 1 m. Despite the more complex dynamics, the tracking is successful, with a position error consistently below 0.16 m, demonstrating the method's effectiveness.
+The UAV tracks a ground vehicle moving along a circular trajectory with a radius of 1 m and an angular frequency of 0.2 rad/s. The tracking remains successful with a position error of less than 0.16 m, demonstrating the method's effectiveness in complex dynamic scenarios.
 
-| Circular Motion Tracking Results |
-| :---: |
-| [![Circular Tracking Demo](Media/circular.png)](Media/circular_tracking.mp4) |
-| *Click the image above to play the tracking video (Media/circular_tracking.mp4)* |
+![Circular Tracking Demo](Media/circular_tracking.gif)
+*Simulation of UAV tracking a vehicle in uniform circular motion.*
+
+![Circular Tracking Results](Media/circular.png)
+*Tracking performance of uniform circular motion.*
 
 ### Robustness in High-Reflective Environments
 
-A key advantage of the Square Cupola AprilTag is its robustness against light reflection. In environments with strong, direct light, a standard planar AprilTag can fail due to reflective interference. However, the polyhedral geometry of our marker ensures that some of its faces remain detectable, maintaining continuous and reliable pose estimation.
+A key advantage of the Square Cupola AprilTag is its robustness against light reflection. When converged light is directed at the marker (e.g., at a 45° angle), a standard planar AprilTag fails to be recognized due to reflective interference. However, our marker leverages its polyhedral geometry, ensuring that additional markers on other planes remain detectable.
 
-| Standard AprilTag (Left) vs. Square Cupola AprilTag (Right) |
-| :---: |
-| ![Detection in a reflective environment](Media/high_reflective_environment.png) |
-| *Left: Standard AprilTag fails. Right: Square Cupola AprilTag is successfully detected.* |
+![Detection in a reflective environment](Media/high_reflective_environment.png)
+*Detection performance in a reflective environment. Left: Standard AprilTag fails. Right: Square Cupola AprilTag is successfully detected.*
 
 ## Publication
 
 This work has been accepted by the **International Conference on Aerospace System Science and Engineering 2025** and was presented orally.
+
+## Acknowledgement
+
+This work is a secondary development based on the official AprilTag library: [AprilRobotics/apriltag](https://github.com/AprilRobotics/apriltag).
